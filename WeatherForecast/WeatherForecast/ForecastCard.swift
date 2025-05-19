@@ -13,6 +13,13 @@ struct ForecastCard: View {
     let high: Int
     let type: WeatherType
     
+    var highTextColor: Color {
+        if high > 80 {
+            return .red
+        }
+        return .black
+    }
+    
     var body: some View {
         VStack {
             Text(day)
@@ -26,6 +33,7 @@ struct ForecastCard: View {
             HStack(spacing: 4) {
                 Text("\(high)")
                     .font(.system(.body, design: .rounded, weight: .bold))
+                    .foregroundStyle(highTextColor)
                 Text("\(low)")
                     .font(.system(.caption, design: .rounded))
                     .foregroundStyle(.secondary)
