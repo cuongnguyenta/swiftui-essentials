@@ -10,6 +10,7 @@ import SwiftUI
 let gradientColor: [Color] = [
     .gradientTop,
     .gradientBottom,
+    .button,
 ]
 
 struct ContentView: View {
@@ -17,6 +18,7 @@ struct ContentView: View {
         TabView {
             WelcomePage()
             FeaturePage()
+            FinalPage()
         }
         .background(Gradient(colors: gradientColor))
         .tabViewStyle(.page)
